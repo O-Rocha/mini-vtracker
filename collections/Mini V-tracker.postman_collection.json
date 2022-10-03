@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "b5d8b10e-aca7-4012-940e-36946911ff5c",
+		"name": "Mini V-tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "News",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"providers\": [\"NEWS_API\", \"MEDIA_STACK\"],\n    \"keyWord\": \"GeekHunter\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/news",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Providers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
