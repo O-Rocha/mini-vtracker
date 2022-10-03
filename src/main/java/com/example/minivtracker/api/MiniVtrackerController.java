@@ -1,11 +1,10 @@
 package com.example.minivtracker.api;
 
+import com.example.minivtracker.dto.BaseRequestDto;
 import com.example.minivtracker.services.NewsapiService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -19,8 +18,8 @@ public class MiniVtrackerController {
         this.newsapiService = newsapiService;
     }
 
-    @GetMapping("/news")
-    public Map<String, Object> getNews (@RequestParam String keyWord) throws JsonProcessingException {
-        return newsapiService.getNewsFromNewsApi(keyWord);
+    @PostMapping("/news")
+    public Map<String, Object> getNews (@RequestBody BaseRequestDto request) {
+        return newsapiService.getNewsFromApis(request);
     }
 }
