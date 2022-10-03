@@ -11,8 +11,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class NewsApiResponseDto {
-    private String status;
-    private Integer totalResults;
-    private List<String> articles;
+public class BaseRequestDto {
+    private List<String> providers;
+    private String keyWord;
 }
